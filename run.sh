@@ -1,8 +1,6 @@
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 cd $SCRIPT_DIR
 
-sudo apt install git
-
 rm running -rf
 git clone git@github.com:temporaryP/running.git
 if [ `cat ./running/running` = "true" ]; then
