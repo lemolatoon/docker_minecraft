@@ -1,5 +1,5 @@
 ## docker_minecraft
-#1. このrepositoryをcloneする
+# 1. このrepositoryをcloneする
 ```
 $ git clone git@github.com:temporaryP/docker_minecraft.git
 ```
@@ -11,28 +11,28 @@ ssh -i ~/.ssh/id_rsa_git
 ```
 ただし、これはshellを再起動すると、この変数もリセットされるので注意
 
-#2. docker,wgetをインストールする。
+# 2. docker,wgetをインストールする。
 *注意:ここからはcloneしたフォルダ(docker_minecraft)内で作業します。(要：``cd docker_minecraft``)
 ```
 $ ./setup.sh
 ```
-#3. DockerFileをbuildする。
+# 3. DockerFileをbuildする。
 ```
 ./build.sh
 ```
-#4. dockerを走らせる。 
+# 4. dockerを走らせる。 
 ```
 ./run.sh
 ```
 ここでは、セーブデータ、プラグインがgit clone, wgetを用いてダウンロードされ、docker内にマウントされます。
 runningリポジトリ内の値がtrueの場合、他の誰かがすでにサーバーを動かしているということなのでサーバーは動きません。
-#5. serverを止める。
+# 5. serverを止める。
 ```
 >stop
 ```
 これで止まります。
 
-##使用しているポート
+## 使用しているポート
 25565,19132/udpです。公開して遊ぶ場合は適宜ufwの設定と、ルータのポートフォワーディングの設定をしてください。
 ```
 $ sudo ufw enable
