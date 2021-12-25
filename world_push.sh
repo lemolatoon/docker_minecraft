@@ -1,3 +1,4 @@
+export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa_git"
 DATE=`TZ='Asia/Tokyo' date`
 
 cd world
