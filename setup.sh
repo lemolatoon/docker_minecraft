@@ -1,3 +1,3 @@
-sudo apt install docker.io
-sudo apt install git
-sudo apt install wget
+sudo apt install docker.io -y
+sudo apt install git -y
+sudo apt install wget -y
