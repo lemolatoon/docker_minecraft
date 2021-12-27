@@ -1,3 +1,34 @@
+#!/bin/bash
+
+function push_false () {
+	echo ""
+	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+	echo "@                                                  @"
+	echo "@   interrupted, executing termination script...   @"
+	echo "@                                                  @"
+	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+	echo ""
+	DATE_tmp=`TZ='Asia/Tokyo' date`
+	cd $SCRIPT_DIR/running
+	echo "false" > running
+	git add running
+	git commit -m "interrupted, $DATE_tmp, false"
+	git push git@github.com:temporaryP/running.git master
+
+	status=$?
+	exit $status
+}
+
+sudo echo "password ok!"
+echo ""
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+echo "@                                                  @"
+echo "@     screenから抜ける場合は、Ctrl-a + d です。    @"
+echo "@   if you want to quit screen, press Ctrl-a + d   @"
+echo "@                                                  @"
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+echo ""
+
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 cd $SCRIPT_DIR
 
@@ -19,7 +50,6 @@ else
 	git push git@github.com:temporaryP/running.git master
 	cd ..
 
-	
 	rm world -rf
 	rm world_nether -rf
 	rm world_the_end -rf
@@ -67,12 +97,3 @@ else
 	git push git@github.com:temporaryP/running.git master
 fi
 
-function push_false () {
-	echo "interrupted, executing termination script..."
-	DATE_tmp=`TZ='Asia/Tokyo' date`
-	cd $SCRIPT_DIR/running
-	echo "false" > running
-	git add running
-	git commit -m "interrupted, $DATE_tmp, false"
-	git push git@github.com:temporaryP/running.git master
-}
