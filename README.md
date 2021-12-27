@@ -18,11 +18,11 @@ $ ./setup.sh
 ```
 # 3. DockerFileをbuildする。
 ```
-./build.sh
+$ ./build.sh
 ```
 # 4. dockerを走らせる。 
 ```
-./run.sh
+$ ./run.sh
 ```
 ここでは、セーブデータ、プラグインがgit clone, wgetを用いてダウンロードされ、docker内にマウントされます。
 runningリポジトリ内の値がtrueの場合、他の誰かがすでにサーバーを動かしているということなのでサーバーは動きません。
