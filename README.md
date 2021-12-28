@@ -1,7 +1,7 @@
-## docker_minecraft
+### docker_minecraft
 # 1. このrepositoryをcloneする
 ```
-$ git clone git@github.com:temporaryP/docker_minecraft.git
+$ git clone https://github.com/lemolatoon/docker_minecraft.git
 ```
 *注意:秘密鍵が必要。id_rsa_gitとして保存している場合にはつぎのように環境変数を設定すると良い。
 ```
